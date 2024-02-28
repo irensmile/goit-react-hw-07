@@ -2,7 +2,7 @@ import css from "./Contact.module.css";
 import personPic from "../../images/person.png";
 import phonePic from "../../images/phone.png";
 import { useDispatch } from "react-redux";
-import { removeContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/operations";
 
 export const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const Contact = ({ name, number, id }) => {
             {number}
           </div>
         </div>
-        <button onClick={() => dispatch(removeContact(id))}>Delete</button>
+        <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
       </li>
     </>
   );
